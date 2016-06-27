@@ -1,5 +1,6 @@
  (ns Basics)
 
+; Hello worlds and functions
 (def hello (fn [] (printf "Hello world\n") ))
 (hello)
 
@@ -8,12 +9,14 @@
 
 (def addInt (fn [] (+ 1 2 3 4)))
 
+; Conditions
 (if true
   "This is True"
   "This is False")
 
+
 (if false
-  "True case won't ever happen, will return nil")
+  "True case won't ever happen, will return nil as no false case")
 
 (if true
   (do (printf "Print this")  "Return this"))
@@ -37,24 +40,3 @@
 
 (and :firstTrue :secondTrueThatWillBeReturned)
 
-(def this_is_a_value
-  ["I" "mean" "a" "list" "value"])
-
-{:first_key "This is a key"
- :first_value "and the value"}
-
-{:keyOfAMapWithFunction +}
-
-(hash-map :a "valueA" :b "valueB")
-
-(get {"key" 1} "key")
-
-((get {:keyOfAMapWithFunction +} :keyOfAMapWithFunction) 1 2)
-
-(get-in {:shallow {:deeper "Deeper value"}} [:shallow :deeper])
-
-({:mapsAsFunctions "Yes, why not?"} :mapsAsFunctions)
-
-(:keywordAsAFunction {:keywordAsAFunction "Yep"})
-
-(:missing {:first 1 :second 2} "Not found this time")
