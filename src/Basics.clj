@@ -46,3 +46,15 @@
 {:keyOfAMapWithFunction +}
 
 (hash-map :a "valueA" :b "valueB")
+
+(get {"key" 1} "key")
+
+((get {:keyOfAMapWithFunction +} :keyOfAMapWithFunction) 1 2)
+
+(get-in {:shallow {:deeper "Deeper value"}} [:shallow :deeper])
+
+({:mapsAsFunctions "Yes, why not?"} :mapsAsFunctions)
+
+(:keywordAsAFunction {:keywordAsAFunction "Yep"})
+
+(:missing {:first 1 :second 2} "Not found this time")
