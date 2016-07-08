@@ -60,3 +60,28 @@
           (assoc new-map key (inc value)))
         {}
         {:first 1 :second 2})
+
+; Take, skip
+(take-while #( > 5 %) (range 0 10))
+
+;Filter
+(some #( > % 20) (range 0 10))
+
+; Time
+(time (map inc [1 2 3]))
+
+; Repeat
+(take 3 (repeatedly #(rand-int 10)) )
+(take 3 (repeatedly (fn [] (rand-int 10))))
+
+; Lazy sequence
+(defn even-numbers
+  ([] (even-numbers 0))
+  ([n] (cons n (lazy-seq (even-numbers (+ n 2))))))
+(take 10 (even-numbers))
+
+; Combining lists
+(concat [0] [1])
+(into [0] #{1})
+(conj [0] 1)
+
